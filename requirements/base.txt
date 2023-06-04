@@ -1,0 +1,5 @@
+Django
+redis
+coverage
+djangorestframework
+psycopg2
