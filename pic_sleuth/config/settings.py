@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'pic_sleuth.config.wsgi.application'
 
 
 # Database
@@ -91,10 +91,10 @@ CACHES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pic_sleuth',
-        'USER': 'psadmin',
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
         'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': 'localhost',
+        'HOST': os.getenv("DB_HOST"),
     }
 }
 
