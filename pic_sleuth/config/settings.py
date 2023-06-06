@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'pic_sleuth.config.wsgi.application'
 
 CACHES = {
     'default': {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://localhost:6379/1",
+        "BACKEND": os.getenv("CACHES_BACKEND"),
+        "LOCATION": os.getenv("CACHES_LOCAION"),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
