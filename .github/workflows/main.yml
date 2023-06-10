@@ -32,10 +32,10 @@ jobs:
           echo "export DJANGO_SETTINGS_MODULE=pic_sleuth.config.settings" >> $GITHUB_ENV
 
       - name: Lint code
-        run: flake8
+        run: python3 -m flake8
 
       - name: Run unit tests
-        run: pytest
+        run: python3 -m pytest
 
   deploy-on-merge:
     runs-on: ubuntu-latest
