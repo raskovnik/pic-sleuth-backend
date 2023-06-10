@@ -27,15 +27,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest pytest-cov Django
 
+      - name: Set up Django environment 
+        run: |
+          echo "export DJANGO_SETTINGS_MODULE=pic_sleuth.config.settings" >> $GITHUB_ENV
+          
       - name: Lint code
         run: flake8
 
       - name: Run unit tests
         run: pytest
-
-      - name: Set up Django environment 
-        run: |
-          echo "export DJANGO_SETTINGS_MODULE=pic_sleuth.config.settings" >> $GITHUB_ENV
 
   deploy-on-merge:
     runs-on: ubuntu-latest
