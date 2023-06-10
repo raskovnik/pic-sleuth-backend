@@ -33,6 +33,10 @@ jobs:
       - name: Run unit tests
         run: pytest
 
+      - name: Set up Django environment 
+        run: |
+          echo "export DJANGO_SETTINGS_MODULE=pic_sleuth.config.settings" >> $GITHUB_ENV
+
   deploy-on-merge:
     runs-on: ubuntu-latest
     needs: lint-and-test
